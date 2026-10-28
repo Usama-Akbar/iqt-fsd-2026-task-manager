@@ -6,6 +6,7 @@ const cors = require('cors');
 const helmet = require('helmet');
 const { migrate } = require('./db');
 const tasksRouter = require('./routes/tasks');
+const weatherRouter = require('./routes/weather');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -16,6 +17,7 @@ app.use(express.json({ limit: '20kb' }));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 app.use('/api/tasks', tasksRouter);
+app.use('/api/weather', weatherRouter);
 app.use('/api', (req, res) => res.status(404).json({ error: 'not found' }));
 
 // In production the built React app is served from the same origin.

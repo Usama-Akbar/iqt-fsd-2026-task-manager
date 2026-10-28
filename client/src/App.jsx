@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { api } from './api'
 import TaskItem from './TaskItem'
+import WeatherWidget from './WeatherWidget'
 
 const FILTERS = { all: () => true, active: (t) => !t.completed, completed: (t) => t.completed }
 
@@ -100,6 +101,9 @@ export default function App() {
           )}
         </main>
 
+        <aside>
+          <WeatherWidget />
+        </aside>
       </div>
     </div>
   )
