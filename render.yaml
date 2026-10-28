@@ -1,0 +1,19 @@
+# One-click deploy on Render: a Node web service (API + built React app) and a managed PostgreSQL.
+services:
+  - type: web
+    name: iqt-fsd-2026-task-manager
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: iqt-tasks-db
+          property: connectionString
+      - key: DATABASE_SSL
+        value: "true"
+databases:
+  - name: iqt-tasks-db
+    plan: free
