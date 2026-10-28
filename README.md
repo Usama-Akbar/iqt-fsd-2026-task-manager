@@ -11,8 +11,8 @@ The app also integrates a **public weather API (Open-Meteo)** shown in a sidebar
 | Database  | PostgreSQL 16 (`pg` driver)            |
 | Public API| Open-Meteo geocoding + forecast        |
 
-- **GitHub:** _<repo link>_
-- **Live demo:** _<demo link>_
+- **GitHub:** https://github.com/Usama-Akbar/iqt-fsd-2026-task-manager
+- **Live demo:** not hosted; run locally in about 2 minutes (see below), or deploy with the included `render.yaml`
 
 ![Desktop](docs/screenshots/desktop.png)
 
@@ -48,7 +48,7 @@ The app also integrates a **public weather API (Open-Meteo)** shown in a sidebar
 
 ```bash
 # 1. Clone
-git clone <repo-url> && cd iqt-fsd-2026-task-manager
+git clone https://github.com/Usama-Akbar/iqt-fsd-2026-task-manager.git && cd iqt-fsd-2026-task-manager
 
 # 2. Create the database
 createdb iqt_tasks
